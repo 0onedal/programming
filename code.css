@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fde1bd;
+    box-shadow: 0 0 10px #0000001a;
+}
+
+h4 {
+    text-align: center;
+    color: #a3972c;
+    background-color: #070707b2;
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 5px;
+
+}
+
+ul li a {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+pre {
+    background-color: #222222;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+code {
+    color: #a3972c;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 0;
+        padding: 3px;
+    }
+}

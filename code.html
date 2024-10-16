@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./code.css">
+    <title>Problem Solving</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">C++ Code</h1>
+        <h3>Problem 1: </h3>
+        <h4>Write A Program To Genrate Mac Address? </h4>
+        <ul><li><a href="./MacAddress.cpp" download>
+        Click To Download File 
+        </a></li></ul>
+     <pre><code>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+const short MAX_SIZE = 6;
+
+short RandomNumbers(short From, short To) 
+{
+    short RandNum = rand() % (To - From + 1) + From;
+    return RandNum;
+}
+
+void FillArrayWithChars(char Letters[MAX_SIZE]) 
+{
+    for (short i = 0; i &lt; MAX_SIZE; i++) 
+    {
+        Letters[i] = char(RandomNumbers(65, 70));
+    }
+}
+
+void FillArrayWithNumbers(short Numbers[MAX_SIZE])
+{
+    for (short i = 0; i &lt; MAX_SIZE; i++) 
+    {
+        Numbers[i] = RandomNumbers(0, 9);
+    }
+}
+
+string ConcatenationNumbersAndString(short Numbers[MAX_SIZE], char Letters[MAX_SIZE]) {
+    string MacAddress = "";
+    for (short i = 0; i &lt; MAX_SIZE; i++) 
+    {
+        MacAddress += to_string(Numbers[i]) + Letters[i];
+
+        if (i &lt; MAX_SIZE - 1)
+         {
+            MacAddress += ":";
+        }
+    }
+    return MacAddress;
+}
+
+int main() 
+{
+    srand((unsigned)time(NULL));
+
+    short Numbers[MAX_SIZE];
+    char Letters[MAX_SIZE];
+
+    FillArrayWithChars(Letters);
+    FillArrayWithNumbers(Numbers);
+
+    cout &lt;&lt; "New Mac: " &lt;&lt; ConcatenationNumbersAndString(Numbers, Letters);
+
+    return 0;
+}
+    </code></pre>
+    </div>
+</body>
+</html>
